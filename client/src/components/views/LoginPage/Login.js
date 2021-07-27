@@ -1,9 +1,8 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import './Login.scss';
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../actions/user_action'
+import axios from 'axios';
 
 const Login = (props) => {
     const dispatch = useDispatch();
@@ -20,18 +19,19 @@ const Login = (props) => {
         e.preventDefault();
 
         let body = {
-            id,
+            email : id,
             password 
         }
 
-        dispatch(loginUser(body))
+        axios.post('https://37d5fc7b4162.ngrok.io/api/users/login', body)
+           .then(response => response.data)
            .then(response => {
-               if (response.payload.loginSuccess) {
-                   props.history.push('/');
-               } else {
-                   alert('Error')
-               }
-           })
+              console.log(response) 
+            
+               if (response.loginSuccess) props.history.push('/landing');
+               else alert("Error");
+               
+            })
     }
 
     return (

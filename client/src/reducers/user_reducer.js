@@ -1,7 +1,8 @@
 import {
-    LOGIN_USER
-} from '..actions/types';
-import { REGISTER_USER } from '../actions/types';
+    LOGIN_USER,
+    REGISTER_USER
+} from '../actions/types';
+
 
 
 export default function (state={}, action) {

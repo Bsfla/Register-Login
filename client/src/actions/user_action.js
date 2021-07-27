@@ -6,7 +6,7 @@ import {
 
 export function loginUser(dataTosubmit) {
     const request = axios.post('/api/users/login', dataTosubmit)
-       .then(response => response.data )
+       .then(response => response.data);
     
     return {
         type: LOGIN_USER,
@@ -16,7 +16,7 @@ export function loginUser(dataTosubmit) {
 
 export function registerUser(dataTosubmit) {
     
-    const request = axios.post('/api/users/register', dataTosubmit)
+    const request = axios.post('https://09f3cf141606.ngrok.io/register', dataTosubmit)
        .then(response => response.data )
     
     return {
