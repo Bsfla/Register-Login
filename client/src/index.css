@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: montserrat;
+  background: linear-gradient(120deg, #2980b9, #8e44ad);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
